@@ -12,7 +12,8 @@
         "components/*": ["components/*"],
         "@utils/*":["utils/*"],
         "@view/*":["containers/views/*"],
-        "@shared/*":["containers/shared/*"]
+        "@shared/*":["containers/shared/*"],
+        "@static/*":["static/*"]
       },  
       "jsx": "react",
       "alwaysStrict": true,

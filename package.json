@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@svgr/webpack": "^4.3.1",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
     "@types/react-loadable": "^5.5.1",
@@ -50,6 +51,7 @@
     "electron-packager": "^14.0.0",
     "electron-prebuilt": "^1.4.13",
     "electron-reload": "^1.4.0",
+    "file-loader": "^4.0.0",
     "less-loader": "^5.0.0",
     "mobx": "^5.10.1",
     "mobx-react": "^6.1.1",

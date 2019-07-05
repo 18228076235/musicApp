@@ -1,0 +1,50 @@
+@for $num from 10 through 30 {
+  .fs-#{$num} {
+    font-size: #{$num}px;
+  }
+}
+
+@each $num in 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 25, 30, 35, 40, 45, 50 {
+  .m-#{$num} {
+    margin: #{$num}px;
+  }
+  .mtb-#{$num} {
+    margin: #{$num}px 0;
+  }
+  .mlr-#{$num} {
+    margin: 0 #{$num}px;
+  }
+  .mt-#{$num} {
+    margin-top: #{$num}px;
+  }
+  .mb-#{$num} {
+    margin-bottom: #{$num}px;
+  }
+  .ml-#{$num} {
+    margin-left: #{$num}px;
+  }
+  .mr-#{$num} {
+    margin-right: #{$num}px;
+  }
+  .p-#{$num} {
+    padding: #{$num}px;
+  }
+  .ptb-#{$num} {
+    padding: #{$num}px 0;
+  }
+  .plr-#{$num} {
+    padding: 0 #{$num}px;
+  }
+  .pt-#{$num} {
+    padding-top: #{$num}px;
+  }
+  .pb-#{$num} {
+    padding-bottom: #{$num}px;
+  }
+  .pl-#{$num} {
+    padding-left: #{$num}px;
+  }
+  .pr-#{$num} {
+    padding-right: #{$num}px;
+  }
+}

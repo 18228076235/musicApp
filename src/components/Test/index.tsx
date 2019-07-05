@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React,{PureComponent} from 'react'
 import {Button} from 'antd'
 import {ComponentRxt} from '../../utils/reactExt'
 
