@@ -13,7 +13,8 @@
         "@utils/*":["utils/*"],
         "@view/*":["containers/views/*"],
         "@shared/*":["containers/shared/*"],
-        "@static/*":["static/*"]
+        "@static/*":["static/*"],
+        "@redux/*":["containers/redux/*"]
       },  
       "jsx": "react",
       "alwaysStrict": true,
