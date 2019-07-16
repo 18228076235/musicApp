@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import CNIcon, { IconTypes } from 'components/CNIcon'
+import { inject, observer } from 'mobx-react'
 import './index.scss'
 
 interface IOption {
@@ -13,8 +14,11 @@ interface IState {
   }
 }
 
-interface IProps {}
-
+interface IProps {
+  globalStore?: IGlobalStore.GlobalStore
+}
+@inject('globalStore')
+@observer
 export default class Header extends PureComponent<IProps, IState> {
   readonly state: IState = {
     headConfig: {
@@ -43,23 +47,34 @@ export default class Header extends PureComponent<IProps, IState> {
 
   render() {
     const { headConfig } = this.state
+    const { globalStore } = this.props
     return (
       <div className="header flex_sb">
-        <ul className="header_base flex">
+        <ul className="flex">
           {headConfig.base.map((item: IOption) => (
-            <li key={item.title} className="header_base_item mr-20">
+            <li
+              onClick={() => globalStore.changeTab(item.title)}
+              key={item.title}
+              className={`${globalStore.activeTab === item.title &&
+                'header_active'} header_item mr-20`}
+            >
               <CNIcon type={item.icon} />
               <p className="title">{item.title}</p>
             </li>
           ))}
         </ul>
         <div className="flex header_logo">
-        <CNIcon type={IconTypes.LOGO} className="mr-10"/>
-        <CNIcon type={IconTypes.LUOO} />
+          <CNIcon type={IconTypes.LOGO} className="mr-10" />
+          <CNIcon type={IconTypes.LUOO} />
         </div>
-        <ul className="header_main flex">
+        <ul className="flex">
           {headConfig.main.map((item: IOption) => (
-            <li key={item.title} className="header_main_item ml-20">
+            <li
+              onClick={() => globalStore.changeTab(item.title)}
+              key={item.title}
+              className={`${globalStore.activeTab === item.title &&
+                'header_active'} header_item mr-20`}
+            >
               <CNIcon type={item.icon} />
               <p className="title">{item.title}</p>
             </li>

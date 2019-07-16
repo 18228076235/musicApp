@@ -1,17 +1,67 @@
 .header{
-    .header_base_item, .header_main_item{
+    .header_item{
         width: 46px;
+        cursor: pointer;
+        position: relative;
         img{
             width: 46px;
             height: 46px;
+            cursor: pointer;
         }
         .title{
             margin-top: 6px;
             color: #ffffff;
             font-size: 14px;
             text-align: center;
+            cursor: pointer;
         }
     }
+
+    .header_item:active{
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            left: 50%;
+            display: block;
+            border-radius: inherit;
+            -webkit-box-shadow: 0 0 0 0 #ffffff;
+            box-shadow: 0 0 0 0 #ffffff;
+            opacity: .2;
+            width: 1px;
+            height: 1px;
+            border-radius:50%;
+            -webkit-animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1),waveEffect .2s cubic-bezier(.08, .82, .17, 1);
+            animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1),waveEffect .2s cubic-bezier(.08, .82, .17, 1);
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            content: '';
+            pointer-events: none;
+        }
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            left: 50%;
+            display: block;
+            border-radius: inherit;
+            -webkit-box-shadow: 0 0 0 0 #ffffff;
+            box-shadow: 0 0 0 0 #ffffff;
+            opacity: .3;
+            width: 1px;
+            height: 1px;
+            border-radius:50%;
+            -webkit-animation: fadeEffect .5s cubic-bezier(.08, .82, .17, 1),waveEffect .5s cubic-bezier(.08, .82, .17, 1);
+            animation: fadeEffect .5s cubic-bezier(.08, .82, .17, 1),waveEffect .5s cubic-bezier(.08, .82, .17, 1);
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            content: '';
+            pointer-events: none;
+        }
+    }
+
     &_logo{
         margin-top: 20px;
         .icon-logo{
@@ -24,3 +74,17 @@
         }
     }
 }
+
+@keyframes waveEffect {
+    100% {
+      -webkit-box-shadow: 0 0 0 #ffffff;
+              box-shadow: 0 0 0 #ffffff;
+      -webkit-box-shadow: 0 0 0 50px #ffffff;
+              box-shadow: 0 0 0 50px #ffffff;
+    }
+  }
+  @keyframes fadeEffect {
+    100% {
+      opacity: 0;
+    }
+  }

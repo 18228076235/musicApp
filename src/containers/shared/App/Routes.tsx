@@ -14,13 +14,16 @@ const Page = Loadable({
     loader:()=>import('@view/page'),
     loading: Loading
 })
-
+const Login = Loadable({
+    loader:()=>import('@view/Login'),
+    loading: Loading
+})
 class App extends React.Component{
     render(){
         return(
             <Router>
                 <Switch>
-                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/' component={Login}/>
                     <Route exact path='/path' component={Page}/>
                 </Switch>
             </Router>
